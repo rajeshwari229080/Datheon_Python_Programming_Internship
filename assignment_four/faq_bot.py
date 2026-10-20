@@ -66,19 +66,19 @@ class FAQMatcher:
         self.greetings: List[str] = [g.lower() for g in dataset.get("greetings", [])]
         self.faqs: List[Dict[str, str]] = dataset.get("faqs", [])
 
-        # Compile specific regex intent matchers
+        # Prioritize specific subject keywords (certificate, submission) over generic timing words
         self.intent_patterns = [
             (
-                re.compile(r"\b(hours?|timing|open|schedule|operating|timing)\b", re.IGNORECASE),
-                "hours",
+                re.compile(r"\b(certificate|cert|certification|completion|award|issued)\b", re.IGNORECASE),
+                "certificate",
             ),
             (
                 re.compile(r"\b(submit|submission|upload|github|repo|repository|project)\b", re.IGNORECASE),
                 "submission",
             ),
             (
-                re.compile(r"\b(certificate|cert|certification|completion|award|issued)\b", re.IGNORECASE),
-                "certificate",
+                re.compile(r"\b(hours?|business hours|open|schedule|operating hours)\b", re.IGNORECASE),
+                "hours",
             ),
         ]
 
