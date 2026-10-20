@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 02: Stock Portfolio Performance Tracker - CodeCraft Studio</title>
+  <meta name="description" content="Technical documentation and execution guide for Assignment 02: Stock Portfolio Performance Tracker.">
+  <link rel="stylesheet" href="../interface/css/studio.css">
+  <script defer src="../interface/js/studio.js"></script>
+</head>
+<body>
+
+  <header class="studio-header" role="banner">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">02</div>
+        <span>Assignment 02 &bull; Stock Tracker</span>
+      </div>
+      <nav aria-label="Page Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.htm">&larr; Back to Studio Home</a></li>
+          <li><a href="#formulas">Formulas</a></li>
+          <li><a href="#execution">Run in Terminal</a></li>
+          <li><a href="#testing">Unit Tests</a></li>
+          <li><span class="status-pill">7 Tests Passing</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-layout" id="main-content">
+
+    <section class="hero-section" aria-labelledby="a2-title">
+      <span class="hero-tag">Assignment 02 Documentation</span>
+      <h1 class="hero-title" id="a2-title">Stock Portfolio Performance Tracker</h1>
+      <p class="hero-subtitle">
+        A financial valuation utility engineered in Python 3.10+. 
+        Calculates invested capital, current valuation, and gain/loss return percentages 
+        while validating ticker symbols against S&amp;P 500 constituents and exporting audit CSVs.
+      </p>
+      <div class="hero-actions">
+        <a href="#execution" class="btn btn-primary">Terminal Execution Guide</a>
+        <a href="README.md" class="btn btn-secondary">View Project README</a>
+        <a href="../index.htm" class="btn btn-secondary">&larr; Back to Studio Home</a>
+      </div>
+    </section>
+
+    <!-- Educational Disclaimer -->
+    <div style="background-color: var(--lime-subtle); border: 1px solid var(--lime-border); border-radius: var(--radius-md); padding: 1.25rem 1.5rem; margin-bottom: 2rem;">
+      <strong style="color: #365314; font-size: 0.95rem;">EDUCATIONAL USE DISCLAIMER:</strong>
+      <p style="color: #4d7c0f; font-size: 0.9rem; margin-top: 0.25rem; line-height: 1.5;">
+        This application is constructed strictly for educational demonstration of financial formulas, data validation, 
+        and CSV export routines. It does not provide real-time trading facilities or investment advice.
+      </p>
+    </div>
+
+    <!-- Mathematical Definitions -->
+    <section class="doc-section" id="formulas">
+      <h2 class="section-title">Valuation Formulas & Metrics</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        All performance calculations use standard financial formulas with 2-decimal rounding precision:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Formula Definition</th>
+              <th>Behavior with Missing Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Invested Capital</strong></td>
+              <td><code>Purchase Price &times; Quantity</code></td>
+              <td>Always computable from entry transaction.</td>
+            </tr>
+            <tr>
+              <td><strong>Market Value</strong></td>
+              <td><code>Current Price &times; Quantity</code></td>
+              <td>Marked <code>UNPRICED</code>; excluded from total valuation.</td>
+            </tr>
+            <tr>
+              <td><strong>Gain / Loss ($)</strong></td>
+              <td><code>(Current Price &minus; Purchase Price) &times; Quantity</code></td>
+              <td>Marked <code>N/A</code>; zero fabrication policy enforced.</td>
+            </tr>
+            <tr>
+              <td><strong>Gain / Loss (%)</strong></td>
+              <td><code>((Current Price &minus; Purchase Price) / Purchase Price) &times; 100</code></td>
+              <td>Marked <code>N/A</code>.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Terminal Execution Instructions -->
+    <section class="doc-section" id="execution">
+      <h2 class="section-title">Terminal Execution Instructions</h2>
+      <p style="color: var(--text-muted);">
+        Execute the portfolio tracker via terminal to inspect positions, aggregate totals, and write CSV valuation reports:
+      </p>
+
+      <div class="code-block">
+        <pre><code># Run from repository root
+python assignment_two/stock_tracker.py</code></pre>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Sample Terminal Output</h3>
+      <div class="code-block">
+        <pre><code>=================================================================
+  CodeCraft Python Studio - Stock Portfolio Performance Tracker
+=================================================================
+[Constituents] Loaded 503 verified S&P 500 company records.
+
+--- Current Portfolio Holdings ---
+[AAPL] 15.0 shares @ $172.50 -> Invested: $2587.50 | Value: $2838.00 | Return: $250.50 (9.68%)
+[MSFT] 10.0 shares @ $310.00 -> Invested: $3100.00 | Value: $3421.00 | Return: $321.00 (10.35%)
+[GOOGL] 8.0 shares @ $135.00 -> Invested: $1080.00 | Value: N/A | Return: N/A (N/A)
+
+--- Portfolio Aggregates ---
+Total Invested Capital : $6,767.50
+Total Market Value     : $6,259.00* (*Note: Some positions are unpriced)
+Total Unrealized Return: $571.50* (Calculated across priced holdings only)
+
+[Export] Detailed valuation record saved to: assignment_two/reports/portfolio_summary.csv</code></pre>
+      </div>
+    </section>
+
+    <!-- Dataset Provenance -->
+    <section class="doc-section">
+      <h2 class="section-title">Constituents Dataset Provenance</h2>
+      <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+        <li><strong>Dataset Source:</strong> <a href="https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv" target="_blank" rel="noopener">datasets/s-and-p-500-companies</a></li>
+        <li><strong>Local File:</strong> <code>assignment_two/data/constituents.csv</code></li>
+        <li><strong>Constituent Records:</strong> 503 verified companies</li>
+        <li><strong>Pricing Note:</strong> Constituents dataset contains corporate metadata (symbol, name, sector). It does not provide real-time quotes; quotes must be entered or provided from transparent sources.</li>
+      </ul>
+    </section>
+
+    <!-- Unit Testing -->
+    <section class="doc-section" id="testing">
+      <h2 class="section-title">Automated Testing & Verification</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        7 unit tests verify calculation precision, unpriced holding safeguards, CSV append preservation, and boundary validation:
+      </p>
+      <div class="code-block">
+        <pre><code>python -m unittest discover -s assignment_two/tests -v</code></pre>
+      </div>
+      <p style="color: var(--emerald-primary); font-weight: 600; margin-top: 0.5rem;">
+        &check; Status: All 7 tests passed (0 failures, 0 errors).
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="studio-footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <a href="../index.htm">&larr; Return to CodeCraft Studio Homepage</a>
+      </div>
+      <div>
+        Assignment 02 Documentation &bull; CodeCraft Python Studio
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
