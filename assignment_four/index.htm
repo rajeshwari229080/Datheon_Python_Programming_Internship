@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 04: Rule-Based Terminal FAQ Bot - CodeCraft Studio</title>
+  <meta name="description" content="Technical documentation and execution guide for Assignment 04: Rule-Based Terminal FAQ Bot.">
+  <link rel="stylesheet" href="../interface/css/studio.css">
+  <script defer src="../interface/js/studio.js"></script>
+</head>
+<body>
+
+  <header class="studio-header" role="banner">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">04</div>
+        <span>Assignment 04 &bull; FAQ Bot</span>
+      </div>
+      <nav aria-label="Page Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.htm">&larr; Back to Studio Home</a></li>
+          <li><a href="#pipeline">Matching Pipeline</a></li>
+          <li><a href="#execution">Run in Terminal</a></li>
+          <li><a href="#testing">Unit Tests</a></li>
+          <li><span class="status-pill">6 Tests Passing</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-layout" id="main-content">
+
+    <section class="hero-section" aria-labelledby="a4-title">
+      <span class="hero-tag">Assignment 04 Documentation</span>
+      <h1 class="hero-title" id="a4-title">Rule-Based Terminal FAQ Bot</h1>
+      <p class="hero-subtitle">
+        A conversational question-answering assistant built in Python 3.10+. 
+        Grounded strictly in verified JSON knowledge datasets, featuring regex pattern matching, 
+        normalized keyword scoring, intent prioritization, and truthful fallbacks.
+      </p>
+      <div class="hero-actions">
+        <a href="#execution" class="btn btn-primary">Terminal Execution Guide</a>
+        <a href="README.md" class="btn btn-secondary">View Project README</a>
+        <a href="../index.htm" class="btn btn-secondary">&larr; Back to Studio Home</a>
+      </div>
+    </section>
+
+    <!-- Architecture & Matching Pipeline -->
+    <section class="doc-section" id="pipeline">
+      <h2 class="section-title">Intent Prioritization Pipeline</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        The FAQ Bot processes user statements through a sequential normalization and priority classifier:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Stage</th>
+              <th>Processor</th>
+              <th>Operation</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Text Normalization</strong></td>
+              <td><code>normalize_text()</code></td>
+              <td>Lowercases, removes punctuation, collapses whitespace into single space.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Command Interceptor</strong></td>
+              <td><code>is_exit_command()</code> / <code>is_help_command()</code></td>
+              <td>Immediately catches session commands (<code>quit</code>, <code>exit</code>, <code>bye</code>, <code>help</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>3. Conversational Flow</strong></td>
+              <td><code>is_greeting()</code></td>
+              <td>Greets the student without consuming FAQ search logic.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Specific Regex Matching</strong></td>
+              <td><code>intent_patterns</code></td>
+              <td>Prioritizes specific nouns (certificate, submission, GitHub) ahead of general timing keywords.</td>
+            </tr>
+            <tr>
+              <td><strong>5. Grounded Fallback</strong></td>
+              <td><code>FALLBACK_MESSAGE</code></td>
+              <td>If no verified answer exists in the JSON dataset, informs the user rather than hallucinating facts.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Grounded Dataset -->
+    <section class="doc-section">
+      <h2 class="section-title">Knowledge Base & Verification</h2>
+      <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+        <li><strong>Dataset Source:</strong> <a href="https://www.datheon.in/datasets/sample_faq.json" target="_blank" rel="noopener">datheon.in/datasets/sample_faq.json</a></li>
+        <li><strong>Local File:</strong> <code>assignment_four/data/sample_faq.json</code></li>
+        <li><strong>Strict Factuality Policy:</strong> No artificial business hours, pricing, or policies are invented. Answers mirror verified dataset contents.</li>
+      </ul>
+    </section>
+
+    <!-- Terminal Execution Instructions -->
+    <section class="doc-section" id="execution">
+      <h2 class="section-title">Terminal Execution Instructions</h2>
+
+      <div class="code-block">
+        <pre><code># Start the interactive assistant from repository root
+python assignment_four/faq_bot.py</code></pre>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Sample Terminal Chat Interaction</h3>
+      <div class="code-block">
+        <pre><code>=================================================================
+  CodeCraft Python Studio - Rule-Based FAQ Assistant
+=================================================================
+[Knowledge Base] Loaded 3 verified FAQ items.
+Type 'help' to view supported topics, or 'quit' to exit.
+
+You: hello!
+Bot: Hello! I am CodeCraft Studio's assistant. How may I assist you with your internship questions today?
+
+You: When will I get my certificate?
+Bot: Certificates are reviewed and issued within 3-5 business days after your code review.
+
+You: Where do I submit my project?
+Bot: You can submit your public GitHub repository link through your Student Workspace.
+
+You: What is your refund policy?
+Bot: I am sorry, but I do not have verified information answering that question in my current dataset. Please type 'help' to review supported topics or consult your program coordinator.
+
+You: quit
+Bot: Thank you for chatting with CodeCraft Support. Have a productive day!</code></pre>
+      </div>
+    </section>
+
+    <!-- Unit Testing -->
+    <section class="doc-section" id="testing">
+      <h2 class="section-title">Automated Testing & Verification</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        6 unit tests verify string normalization, greeting triggers, exit commands, regex topic matching, and safe fallback handling:
+      </p>
+      <div class="code-block">
+        <pre><code>python -m unittest discover -s assignment_four/tests -v</code></pre>
+      </div>
+      <p style="color: var(--emerald-primary); font-weight: 600; margin-top: 0.5rem;">
+        &check; Status: All 6 tests passed (0 failures, 0 errors).
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="studio-footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <a href="../index.htm">&larr; Return to CodeCraft Studio Homepage</a>
+      </div>
+      <div>
+        Assignment 04 Documentation &bull; CodeCraft Python Studio
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
