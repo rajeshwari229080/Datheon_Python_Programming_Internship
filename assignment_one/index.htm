@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 01: Console Hangman Word Game - CodeCraft Studio</title>
+  <meta name="description" content="Technical documentation and execution guide for Assignment 01: Console Hangman Word Game.">
+  <link rel="stylesheet" href="../interface/css/studio.css">
+  <script defer src="../interface/js/studio.js"></script>
+</head>
+<body>
+
+  <header class="studio-header" role="banner">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">01</div>
+        <span>Assignment 01 &bull; Hangman Word Game</span>
+      </div>
+      <nav aria-label="Page Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.htm">&larr; Back to Studio Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#execution">Run in Terminal</a></li>
+          <li><a href="#testing">Unit Tests</a></li>
+          <li><span class="status-pill">10 Tests Passing</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-layout" id="main-content">
+
+    <section class="hero-section" aria-labelledby="a1-title">
+      <span class="hero-tag">Assignment 01 Documentation</span>
+      <h1 class="hero-title" id="a1-title">Console Hangman Word Game</h1>
+      <p class="hero-subtitle">
+        An interactive, modular console word puzzle developed in Python 3.10+. 
+        Features a 7-stage ASCII gallows, strict single-character validation, 
+        duplicate guess immunity, and dictionary fallback mechanisms.
+      </p>
+      <div class="hero-actions">
+        <a href="#execution" class="btn btn-primary">Terminal Execution Guide</a>
+        <a href="README.md" class="btn btn-secondary">View Project README</a>
+        <a href="../index.htm" class="btn btn-secondary">&larr; Back to Studio Home</a>
+      </div>
+    </section>
+
+    <!-- Project Specifications -->
+    <section class="doc-section" id="features">
+      <h2 class="section-title">Core Requirements & Architecture</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        The application is structured into decoupled components separating input validation, game state management, 
+        and terminal presentation:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Component</th>
+              <th>Class / Function</th>
+              <th>Responsibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Vocabulary Loader</strong></td>
+              <td><code>DictionaryLoader</code></td>
+              <td>Loads 9,800+ English words from local data cache; applies word length bounds (4-10 chars); activates safe offline fallback list if missing.</td>
+            </tr>
+            <tr>
+              <td><strong>State Manager</strong></td>
+              <td><code>HangmanGame</code></td>
+              <td>Tracks secret word, guessed letters set, lives remaining (max 6), victory/loss state, and masked word formatting (<code>p _ t h _ n</code>).</td>
+            </tr>
+            <tr>
+              <td><strong>ASCII Renderer</strong></td>
+              <td><code>STAGES</code> tuple</td>
+              <td>7-stage progressive gallows graphics reflecting exact error counts (0 to 6 errors).</td>
+            </tr>
+            <tr>
+              <td><strong>Terminal Loop</strong></td>
+              <td><code>run_console_session()</code></td>
+              <td>Prompts player for letter guesses, validates inputs, catches <code>Ctrl+C</code> and <code>EOFError</code>, and handles replay loops.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Terminal Execution Instructions -->
+    <section class="doc-section" id="execution">
+      <h2 class="section-title">Terminal Execution Instructions</h2>
+      <p style="color: var(--text-muted);">
+        <strong>Important Note:</strong> Python console programs execute within your local command-line environment (PowerShell, Command Prompt, or Bash). 
+        They cannot be executed by clicking static HTML buttons in a web browser.
+      </p>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Launch Word Game</h3>
+      <div class="code-block">
+        <pre><code># Navigate to the repository root directory
+python assignment_one/word_game.py</code></pre>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Sample Terminal Interaction</h3>
+      <div class="code-block">
+        <pre><code>============================================================
+  CodeCraft Python Studio - Console Hangman Word Game
+============================================================
+[System] Loaded 9894 candidate words.
+
+[New Game] A secret word has been selected! Good luck!
+
+       +---+
+       |   |
+           |
+           |
+           |
+           |
+    =========
+    
+Word: _ _ _ _ _ _
+Guessed Letters: None
+Remaining Lives: 6/6
+
+Enter your letter guess (or 'quit' to exit): p
+>> Good guess! 'P' is in the word.</code></pre>
+      </div>
+    </section>
+
+    <!-- Dataset Provenance -->
+    <section class="doc-section">
+      <h2 class="section-title">Dataset Provenance</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        Vocabulary is sourced from the official Google 10,000 English word repository:
+      </p>
+      <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+        <li><strong>Dataset Source:</strong> <a href="https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt" target="_blank" rel="noopener">first20hours/google-10000-english-no-swears.txt</a></li>
+        <li><strong>Local File Path:</strong> <code>assignment_one/data/words.txt</code></li>
+        <li><strong>Total Verified Words:</strong> 9,894 entries</li>
+        <li><strong>Fallback Policy:</strong> Built-in immutable tuple of programming terminology ensures the game functions even if the file is moved or deleted.</li>
+      </ul>
+    </section>
+
+    <!-- Unit Testing -->
+    <section class="doc-section" id="testing">
+      <h2 class="section-title">Automated Testing & Verification</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        10 automated unit tests verify guess validation, life decrements, duplicate guess safety, win/loss triggers, and gallows rendering:
+      </p>
+      <div class="code-block">
+        <pre><code>python -m unittest discover -s assignment_one/tests -v</code></pre>
+      </div>
+      <p style="color: var(--emerald-primary); font-weight: 600; margin-top: 0.5rem;">
+        &check; Status: All 10 tests passed (0 failures, 0 errors).
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="studio-footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <a href="../index.htm">&larr; Return to CodeCraft Studio Homepage</a>
+      </div>
+      <div>
+        Assignment 01 Documentation &bull; CodeCraft Python Studio
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
