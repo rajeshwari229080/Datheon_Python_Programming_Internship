@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assignment 03: Automated File Organizer - CodeCraft Studio</title>
+  <meta name="description" content="Technical documentation and execution guide for Assignment 03: Automated File Organizer.">
+  <link rel="stylesheet" href="../interface/css/studio.css">
+  <script defer src="../interface/js/studio.js"></script>
+</head>
+<body>
+
+  <header class="studio-header" role="banner">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">03</div>
+        <span>Assignment 03 &bull; File Organizer</span>
+      </div>
+      <nav aria-label="Page Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.htm">&larr; Back to Studio Home</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#execution">Run in Terminal</a></li>
+          <li><a href="#testing">Unit Tests</a></li>
+          <li><span class="status-pill">5 Tests Passing</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-layout" id="main-content">
+
+    <section class="hero-section" aria-labelledby="a3-title">
+      <span class="hero-tag">Assignment 03 Documentation</span>
+      <h1 class="hero-title" id="a3-title">Automated File Organizer</h1>
+      <p class="hero-subtitle">
+        A resilient CLI filesystem utility built in Python 3.10+ using <code>pathlib</code> and <code>shutil</code>. 
+        Automatically segregates disorganized files into 9 structured functional categories with dry-run previews, 
+        non-destructive collision renaming, root guard safety, and operation logging.
+      </p>
+      <div class="hero-actions">
+        <a href="#execution" class="btn btn-primary">Terminal Execution Guide</a>
+        <a href="README.md" class="btn btn-secondary">View Project README</a>
+        <a href="../index.htm" class="btn btn-secondary">&larr; Back to Studio Home</a>
+      </div>
+    </section>
+
+    <!-- 9 Categories -->
+    <section class="doc-section" id="categories">
+      <h2 class="section-title">The 9 Functional Categories</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        Files are classified based on lowercase extension mapping:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Common Extensions Handled</th>
+              <th>Destination Directory</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Documents</strong></td>
+              <td><code>.pdf</code>, <code>.docx</code>, <code>.doc</code>, <code>.txt</code>, <code>.rtf</code>, <code>.odt</code>, <code>.md</code></td>
+              <td><code>&lt;target&gt;/Documents/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Images</strong></td>
+              <td><code>.jpg</code>, <code>.jpeg</code>, <code>.png</code>, <code>.gif</code>, <code>.bmp</code>, <code>.svg</code>, <code>.webp</code></td>
+              <td><code>&lt;target&gt;/Images/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Videos</strong></td>
+              <td><code>.mp4</code>, <code>.mkv</code>, <code>.avi</code>, <code>.mov</code>, <code>.wmv</code>, <code>.webm</code></td>
+              <td><code>&lt;target&gt;/Videos/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Audio</strong></td>
+              <td><code>.mp3</code>, <code>.wav</code>, <code>.aac</code>, <code>.flac</code>, <code>.ogg</code>, <code>.m4a</code></td>
+              <td><code>&lt;target&gt;/Audio/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Archives</strong></td>
+              <td><code>.zip</code>, <code>.tar</code>, <code>.gz</code>, <code>.7z</code>, <code>.rar</code>, <code>.bz2</code></td>
+              <td><code>&lt;target&gt;/Archives/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Source Code</strong></td>
+              <td><code>.py</code>, <code>.js</code>, <code>.ts</code>, <code>.html</code>, <code>.css</code>, <code>.java</code>, <code>.cpp</code>, <code>.sql</code></td>
+              <td><code>&lt;target&gt;/Source Code/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Spreadsheets</strong></td>
+              <td><code>.xlsx</code>, <code>.xls</code>, <code>.csv</code>, <code>.tsv</code>, <code>.ods</code></td>
+              <td><code>&lt;target&gt;/Spreadsheets/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Presentations</strong></td>
+              <td><code>.pptx</code>, <code>.ppt</code>, <code>.key</code>, <code>.odp</code></td>
+              <td><code>&lt;target&gt;/Presentations/</code></td>
+            </tr>
+            <tr>
+              <td><strong>Other</strong></td>
+              <td>All unrecognized or unclassified file types</td>
+              <td><code>&lt;target&gt;/Other/</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Safety Guards -->
+    <section class="doc-section">
+      <h2 class="section-title">Safety Safeguards & Collision Policy</h2>
+      <ul style="margin-left: 1.5rem; color: var(--text-muted); line-height: 1.8;">
+        <li><strong>Drive Root Protection:</strong> Refuses to process filesystem roots (e.g. <code>C:\</code>, <code>/</code>) or Windows operating system folders to prevent inadvertent damage.</li>
+        <li><strong>Non-Destructive Collisions:</strong> If <code>report.pdf</code> already exists in <code>Documents/</code>, an incoming file of the same name is automatically moved as <code>report_1.pdf</code> without data loss.</li>
+        <li><strong>Dry-Run Mode:</strong> Using <code>--dry-run</code> previews all classifications without writing to disk or creating folders.</li>
+        <li><strong>Folder Skipping:</strong> Avoids re-processing existing category subdirectories, hidden dotfiles (e.g. <code>.gitkeep</code>), and symlinks.</li>
+      </ul>
+    </section>
+
+    <!-- Terminal Execution Instructions -->
+    <section class="doc-section" id="execution">
+      <h2 class="section-title">Terminal Execution Instructions</h2>
+
+      <h3 style="margin-top: 1rem; font-size: 1.1rem;">1. Dry-Run Simulation (Preview Only)</h3>
+      <div class="code-block">
+        <pre><code>python assignment_three/file_sorter.py --target "path/to/folder" --dry-run</code></pre>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">2. Interactive Organization with Confirmation</h3>
+      <div class="code-block">
+        <pre><code>python assignment_three/file_sorter.py --target "path/to/folder" --interactive</code></pre>
+      </div>
+
+      <h3 style="margin-top: 1.5rem; font-size: 1.1rem;">Sample Execution Output</h3>
+      <div class="code-block">
+        <pre><code>[INFO] Target directory resolved: D:\temp\downloads
+[INFO] Mode: DRY RUN (Preview Only - No Files Changed)
+[INFO] Discovered 3 file(s) eligible for classification.
+[INFO] [DRY-RUN] Would move: 'annual_report.pdf' -> 'Documents/annual_report.pdf'
+[INFO] [DRY-RUN] Would move: 'banner.png' -> 'Images/banner.png'
+[INFO] [DRY-RUN] Would move: 'script.py' -> 'Source Code/script.py'
+[INFO] Operation complete. Moved: 3, Skipped: 0, Failures: 0.</code></pre>
+      </div>
+    </section>
+
+    <!-- Unit Testing -->
+    <section class="doc-section" id="testing">
+      <h2 class="section-title">Automated Testing & Verification</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        5 unit tests verify extension classification, disk safety during dry-run, live moves, collision renaming, and root refusal:
+      </p>
+      <div class="code-block">
+        <pre><code>python -m unittest discover -s assignment_three/tests -v</code></pre>
+      </div>
+      <p style="color: var(--emerald-primary); font-weight: 600; margin-top: 0.5rem;">
+        &check; Status: All 5 tests passed (0 failures, 0 errors).
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="studio-footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <a href="../index.htm">&larr; Return to CodeCraft Studio Homepage</a>
+      </div>
+      <div>
+        Assignment 03 Documentation &bull; CodeCraft Python Studio
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
