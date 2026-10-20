@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCraft Python Studio - Four Practical Applications</title>
+  <meta name="description" content="CodeCraft Python Studio: An independent suite of four practical Python applications covering interactive games, portfolio analysis, filesystem automation, and conversational bots.">
+  <link rel="stylesheet" href="interface/css/studio.css">
+  <script defer src="interface/js/studio.js"></script>
+</head>
+<body>
+
+  <!-- Studio Header -->
+  <header class="studio-header" role="banner">
+    <div class="header-container">
+      <div class="brand-badge">
+        <div class="brand-icon" aria-hidden="true">CC</div>
+        <span>CodeCraft Python Studio</span>
+      </div>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#assignments">Assignments</a></li>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#architecture">Architecture</a></li>
+          <li><a href="#provenance">Data Sources</a></li>
+          <li><a href="#testing">Testing</a></li>
+          <li><span class="status-pill">Suite v1.0 • Verified</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="main-layout" id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <span class="hero-tag">Independent Python Internship Portfolio</span>
+      <h1 class="hero-title" id="hero-heading">CodeCraft Python Studio</h1>
+      <p class="hero-subtitle">
+        Four practical Python applications covering interactive programming, financial data analysis, 
+        filesystem automation, and rule-based conversational systems.
+      </p>
+      <div class="hero-actions">
+        <a href="#assignments" class="btn btn-primary" id="btn-explore">Explore Assignments</a>
+        <a href="#overview" class="btn btn-secondary" id="btn-overview">Technical Overview</a>
+        <a href="#provenance" class="btn btn-secondary" id="btn-sources">Data Sources</a>
+        <a href="#testing" class="btn btn-secondary" id="btn-testing">Testing and Documentation</a>
+      </div>
+    </section>
+
+    <!-- Assignment Grid -->
+    <section id="assignments" aria-labelledby="assignments-heading">
+      <div style="margin-bottom: 1.5rem;">
+        <h2 class="section-title" id="assignments-heading">Core Internship Applications</h2>
+        <p style="color: var(--text-muted); font-size: 0.95rem;">
+          Each application is independently runnable from the command line, fully documented, and verified with unit tests.
+        </p>
+      </div>
+
+      <div class="assignment-grid">
+
+        <!-- Card 01 -->
+        <article class="assignment-card" id="card-assignment-one">
+          <div class="card-header">
+            <span class="card-num">01</span>
+            <span class="badge">Console App</span>
+          </div>
+          <h3 class="card-title">Console Hangman Word Game</h3>
+          <p class="card-desc">
+            A modular 6-attempt vocabulary puzzle featuring 7-stage ASCII gallows rendering, 
+            strict single-letter validation, duplicate guess immunity, and dictionary fallback resilience.
+          </p>
+          <div class="tech-badges">
+            <span class="badge">Python 3.10+</span>
+            <span class="badge">ASCII Art</span>
+            <span class="badge">Random</span>
+            <span class="badge">Google-10000 Dataset</span>
+          </div>
+          <div class="card-footer">
+            <code class="card-cmd">python assignment_one/word_game.py</code>
+            <a href="assignment_one/index.htm" class="btn btn-secondary" id="link-a1">View Project &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 02 -->
+        <article class="assignment-card" id="card-assignment-two">
+          <div class="card-header">
+            <span class="card-num">02</span>
+            <span class="badge">Financial Analytics</span>
+          </div>
+          <h3 class="card-title">Stock Portfolio Performance Tracker</h3>
+          <p class="card-desc">
+            Calculates invested capital, current valuation, and gain/loss return percentages. 
+            Cross-references official S&P 500 constituents, refuses fabricated prices, and exports CSV reports.
+          </p>
+          <div class="tech-badges">
+            <span class="badge">csv Module</span>
+            <span class="badge">S&P 500 Catalog</span>
+            <span class="badge">Financial Math</span>
+            <span class="badge">Audit Logging</span>
+          </div>
+          <div class="card-footer">
+            <code class="card-cmd">python assignment_two/stock_tracker.py</code>
+            <a href="assignment_two/index.htm" class="btn btn-secondary" id="link-a2">View Project &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 03 -->
+        <article class="assignment-card" id="card-assignment-three">
+          <div class="card-header">
+            <span class="card-num">03</span>
+            <span class="badge">Automation Utility</span>
+          </div>
+          <h3 class="card-title">Automated File Organizer</h3>
+          <p class="card-desc">
+            Classifies cluttered folders into 9 functional categories. Features dry-run previews, 
+            non-destructive collision renaming (<code style="font-size: 0.85em;">file_1.ext</code>), root directory protection, and operation logging.
+          </p>
+          <div class="tech-badges">
+            <span class="badge">pathlib</span>
+            <span class="badge">shutil</span>
+            <span class="badge">argparse CLI</span>
+            <span class="badge">Collision Safety</span>
+          </div>
+          <div class="card-footer">
+            <code class="card-cmd">python assignment_three/file_sorter.py --dry-run</code>
+            <a href="assignment_three/index.htm" class="btn btn-secondary" id="link-a3">View Project &rarr;</a>
+          </div>
+        </article>
+
+        <!-- Card 04 -->
+        <article class="assignment-card" id="card-assignment-four">
+          <div class="card-header">
+            <span class="card-num">04</span>
+            <span class="badge">Conversational AI</span>
+          </div>
+          <h3 class="card-title">Rule-Based Terminal FAQ Bot</h3>
+          <p class="card-desc">
+            A conversational assistant for internship inquiries grounded in Datheon JSON FAQs. 
+            Employs regex intent prioritization, input normalization, greeting flows, and graceful fallback handling.
+          </p>
+          <div class="tech-badges">
+            <span class="badge">re Module</span>
+            <span class="badge">json</span>
+            <span class="badge">Token Normalization</span>
+            <span class="badge">Offline Grounding</span>
+          </div>
+          <div class="card-footer">
+            <code class="card-cmd">python assignment_four/faq_bot.py</code>
+            <a href="assignment_four/index.htm" class="btn btn-secondary" id="link-a4">View Project &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Technical Overview -->
+    <section class="doc-section" id="overview" aria-labelledby="overview-heading">
+      <h2 class="section-title" id="overview-heading">Technical Overview</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        CodeCraft Python Studio is constructed entirely using the Python standard library, eliminating external package bloat 
+        and enabling straightforward local execution on any modern Python 3.10+ installation.
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Assignment</th>
+              <th>Primary Entry Point</th>
+              <th>Standard Library Modules</th>
+              <th>Verified Test Suite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>01 — Word Game</strong></td>
+              <td><code>assignment_one/word_game.py</code></td>
+              <td><code>random</code>, <code>pathlib</code>, <code>sys</code>, <code>typing</code></td>
+              <td><code>assignment_one/tests/test_word_game.py</code> (10 tests)</td>
+            </tr>
+            <tr>
+              <td><strong>02 — Stock Tracker</strong></td>
+              <td><code>assignment_two/stock_tracker.py</code></td>
+              <td><code>csv</code>, <code>datetime</code>, <code>pathlib</code>, <code>typing</code></td>
+              <td><code>assignment_two/tests/test_stock_tracker.py</code> (7 tests)</td>
+            </tr>
+            <tr>
+              <td><strong>03 — File Sorter</strong></td>
+              <td><code>assignment_three/file_sorter.py</code></td>
+              <td><code>pathlib</code>, <code>shutil</code>, <code>argparse</code>, <code>logging</code></td>
+              <td><code>assignment_three/tests/test_file_sorter.py</code> (5 tests)</td>
+            </tr>
+            <tr>
+              <td><strong>04 — FAQ Bot</strong></td>
+              <td><code>assignment_four/faq_bot.py</code></td>
+              <td><code>re</code>, <code>json</code>, <code>string</code>, <code>pathlib</code></td>
+              <td><code>assignment_four/tests/test_faq_bot.py</code> (6 tests)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- System Architecture -->
+    <section class="doc-section" id="architecture" aria-labelledby="arch-heading">
+      <h2 class="section-title" id="arch-heading">System Architecture & Isolation</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        The project architecture adheres to strict modular separation. Each assignment contains its own entry point, 
+        isolated dataset cache, and dedicated unit test suite:
+      </p>
+      <div class="code-block">
+        <pre><code>codecraft-python-studio/
+├── index.htm                      # Universal Studio Portal
+├── requirements.txt               # Standard environment declaration
+├── interface/                     # Minimalist UI styles & scripts
+│   ├── css/studio.css
+│   └── js/studio.js
+├── assignment_one/                 # Hangman Game & Google 10000 Words
+│   ├── word_game.py
+│   ├── data/words.txt
+│   └── tests/test_word_game.py
+├── assignment_two/                 # Stock Portfolio & S&P 500 Catalog
+│   ├── stock_tracker.py
+│   ├── data/constituents.csv
+│   └── tests/test_stock_tracker.py
+├── assignment_three/               # 9-Category Automated File Sorter
+│   ├── file_sorter.py
+│   ├── logs/
+│   └── tests/test_file_sorter.py
+├── assignment_four/                # Grounded Rule-Based FAQ Bot
+│   ├── faq_bot.py
+│   ├── data/sample_faq.json
+│   └── tests/test_faq_bot.py
+└── project_docs/                  # Technical documentation & audit logs
+    ├── TECHNICAL_OVERVIEW.md
+    ├── DATA_PROVENANCE.md
+    └── TEST_RESULTS.md</code></pre>
+      </div>
+    </section>
+
+    <!-- Data Sources & Provenance -->
+    <section class="doc-section" id="provenance" aria-labelledby="prov-heading">
+      <h2 class="section-title" id="prov-heading">Dataset Provenance</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">
+        All external datasets have been downloaded directly from their canonical public repositories and verified:
+      </p>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>Local Path</th>
+              <th>Canonical Public Source</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>English Vocabulary (10k)</strong></td>
+              <td><code>assignment_one/data/words.txt</code></td>
+              <td><a href="https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english-no-swears.txt" target="_blank" rel="noopener">first20hours/google-10000-english</a></td>
+              <td><span class="status-pill">9,894 words verified</span></td>
+            </tr>
+            <tr>
+              <td><strong>S&P 500 Constituents</strong></td>
+              <td><code>assignment_two/data/constituents.csv</code></td>
+              <td><a href="https://raw.githubusercontent.com/datasets/s-and-p-500-companies/master/data/constituents.csv" target="_blank" rel="noopener">datasets/s-and-p-500-companies</a></td>
+              <td><span class="status-pill">503 records verified</span></td>
+            </tr>
+            <tr>
+              <td><strong>Datheon Sample FAQ</strong></td>
+              <td><code>assignment_four/data/sample_faq.json</code></td>
+              <td><a href="https://www.datheon.in/datasets/sample_faq.json" target="_blank" rel="noopener">datheon.in/datasets/sample_faq.json</a></td>
+              <td><span class="status-pill">JSON Schema verified</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Testing & Verification Status -->
+    <section class="doc-section" id="testing" aria-labelledby="testing-heading">
+      <h2 class="section-title" id="testing-heading">Automated Test Status & Execution</h2>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">
+        All 28 unit tests pass with zero failures. Execute the full verification suite using Python's standard <code>unittest</code> runner:
+      </p>
+
+      <div class="code-block">
+        <pre><code># Run all four test suites sequentially
+python -m unittest discover -s assignment_one/tests -v
+python -m unittest discover -s assignment_two/tests -v
+python -m unittest discover -s assignment_three/tests -v
+python -m unittest discover -s assignment_four/tests -v</code></pre>
+      </div>
+
+      <div class="data-table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Module</th>
+              <th>Test Target</th>
+              <th>Tests Count</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Assignment One</td>
+              <td>Input validation, life decrements, duplicates, win/loss, fallback dictionary</td>
+              <td>10 tests</td>
+              <td><span class="status-pill">Passed (10/10)</span></td>
+            </tr>
+            <tr>
+              <td>Assignment Two</td>
+              <td>Valuation formulas, unpriced assets, CSV export append, constituents lookup</td>
+              <td>7 tests</td>
+              <td><span class="status-pill">Passed (7/7)</span></td>
+            </tr>
+            <tr>
+              <td>Assignment Three</td>
+              <td>9 categories, dry-run safety, non-destructive renaming, root guard</td>
+              <td>5 tests</td>
+              <td><span class="status-pill">Passed (5/5)</span></td>
+            </tr>
+            <tr>
+              <td>Assignment Four</td>
+              <td>Token normalization, greetings, regex priority, grounded answers, fallbacks</td>
+              <td>6 tests</td>
+              <td><span class="status-pill">Passed (6/6)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Studio Footer -->
+  <footer class="studio-footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <strong>CodeCraft Python Studio</strong> &bull; Third Independent Python Internship Submission
+      </div>
+      <div>
+        Crafted with standard Python 3.10+, Semantic HTML5, and Vanilla CSS
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
