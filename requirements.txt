@@ -1,0 +1,5 @@
+# CodeCraft Python Studio
+# All four assignment solutions utilize Python 3.10+ standard library.
+# Optional testing and verification utilities:
+pytest>=7.0.0
+coverage>=7.0.0
