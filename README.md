@@ -21,14 +21,14 @@ CodeCraft Python Studio delivers four practical Python applications covering int
 ## Workspace Navigation & Web Portal
 
 The suite includes an interactive, responsive local HTML portal connecting all four assignments:
-- **Universal Homepage:** [`index.htm`](index.htm)
-- **Assignment 01 Documentation:** [`assignment_one/index.htm`](assignment_one/index.htm)
-- **Assignment 02 Documentation:** [`assignment_two/index.htm`](assignment_two/index.htm)
-- **Assignment 03 Documentation:** [`assignment_three/index.htm`](assignment_three/index.htm)
-- **Assignment 04 Documentation:** [`assignment_four/index.htm`](assignment_four/index.htm)
+- **Universal Homepage:** [`index.html`](index.html)
+- **Assignment 01 Documentation:** [`assignment_one/index.html`](assignment_one/index.html)
+- **Assignment 02 Documentation:** [`assignment_two/index.html`](assignment_two/index.html)
+- **Assignment 03 Documentation:** [`assignment_three/index.html`](assignment_three/index.html)
+- **Assignment 04 Documentation:** [`assignment_four/index.html`](assignment_four/index.html)
 - **Shared Stylesheet:** [`interface/css/studio.css`](interface/css/studio.css)
 
-Open `index.htm` directly in any web browser to explore interactive project overviews, architectural diagrams, formula definitions, and execution guides.
+Open `index.html` directly in any web browser to explore interactive project overviews, architectural diagrams, formula definitions, and execution guides.
 
 ---
 

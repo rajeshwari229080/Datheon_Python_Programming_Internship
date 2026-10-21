@@ -12,7 +12,7 @@ CodeCraft Python Studio is architected around strict modular decomposition, test
 
 ```
 codecraft-python-studio/
-├── index.htm                      # Universal Studio Portal
+├── index.html                     # Universal Studio Portal
 ├── interface/                     # Minimalist UI styles & scripts
 │   ├── css/studio.css
 │   └── js/studio.js
