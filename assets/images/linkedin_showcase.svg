@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#ecfdf5"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fbfcfd"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#84cc16"/>
+      <stop offset="100%" stop-color="#a3e635"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle decorative grid -->
+  <g stroke="#e2e8f0" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="135" x2="1200" y2="135"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+
+  <!-- Top Brand Tag -->
+  <g transform="translate(60, 45)">
+    <rect width="260" height="34" rx="17" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5"/>
+    <circle cx="20" cy="17" r="6" fill="#059669"/>
+    <text x="36" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#065f46" letter-spacing="0.5">PYTHON INTERNSHIP SUITE</text>
+  </g>
+
+  <!-- Metrics Pill -->
+  <g transform="translate(860, 45)">
+    <rect width="280" height="34" rx="17" fill="#059669"/>
+    <text x="140" y="22" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" fill="#ffffff" letter-spacing="0.5">&#10004; 28/28 UNIT TESTS PASSING (100%)</text>
+  </g>
+
+  <!-- Header Main Title -->
+  <text x="60" y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="#0f172a" letter-spacing="-0.5">
+    CodeCraft Python Studio &bull; Capstone Showcase
+  </text>
+  <text x="60" y="155" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="500" fill="#475569">
+    Four independent, production-grade Python applications engineered with pure standard libraries &amp; 100% test verification.
+  </text>
+
+  <!-- 4 Application Cards Grid -->
+  <!-- Card 1 -->
+  <g transform="translate(60, 185)" filter="url(#cardShadow)">
+    <rect width="255" height="375" rx="16" fill="url(#cardGrad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="255" height="6" rx="3" fill="#059669"/>
+    <text x="24" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#059669">PROJECT 01</text>
+    <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Console Hangman</text>
+    <text x="24" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#64748b">Interactive Word Puzzle</text>
+    
+    <!-- Mini Terminal Visual -->
+    <rect x="20" y="108" width="215" height="135" rx="8" fill="#0f172a"/>
+    <circle cx="34" cy="120" r="3.5" fill="#ef4444"/>
+    <circle cx="45" cy="120" r="3.5" fill="#f59e0b"/>
+    <circle cx="56" cy="120" r="3.5" fill="#10b981"/>
+    <text x="30" y="150" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" fill="#10b981">Word: P _ T H _ N</text>
+    <text x="30" y="172" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#94a3b8">Lives: [&#9829;&#9829;&#9829;&#9829;&#9829;&#9829;] 6/6</text>
+    <text x="30" y="194" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#64748b">Attempts: 7-Stage ASCII</text>
+    <text x="30" y="218" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#38bdf8">&gt; Guess letter: Y [OK]</text>
+
+    <!-- Bullets -->
+    <text x="24" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; 7-Stage ASCII gallows rendering</text>
+    <text x="24" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; 9,800+ English words vocabulary</text>
+    <text x="24" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Duplicate guess immunity</text>
+    
+    <!-- Status -->
+    <rect x="24" y="335" width="207" height="26" rx="6" fill="#ecfdf5" stroke="#a7f3d0"/>
+    <text x="127" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#047857">&#10003; 10 Unit Tests Passing</text>
+  </g>
+
+  <!-- Card 2 -->
+  <g transform="translate(340, 185)" filter="url(#cardShadow)">
+    <rect width="255" height="375" rx="16" fill="url(#cardGrad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="255" height="6" rx="3" fill="#0ea5e9"/>
+    <text x="24" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#0284c7">PROJECT 02</text>
+    <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Stock Tracker</text>
+    <text x="24" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#64748b">Portfolio Analytics &amp; CSV</text>
+    
+    <!-- Mini Stock Visual -->
+    <rect x="20" y="108" width="215" height="135" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="32" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#64748b">PORTFOLIO VALUATION</text>
+    <text x="32" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800" fill="#0f172a">$28,450.00</text>
+    <text x="175" y="156" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#16a34a">+7.85%</text>
+    <path d="M 32 205 Q 70 190, 110 200 T 170 175 T 215 170" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+    <text x="32" y="230" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#0284c7">AAPL &bull; MSFT &bull; GOOGL &bull; NVDA</text>
+
+    <!-- Bullets -->
+    <text x="24" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Official S&amp;P 500 constituents</text>
+    <text x="24" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Zero price fabrication policy</text>
+    <text x="24" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Automated CSV report generator</text>
+    
+    <!-- Status -->
+    <rect x="24" y="335" width="207" height="26" rx="6" fill="#f0f9ff" stroke="#bae6fd"/>
+    <text x="127" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#0369a1">&#10003; 7 Unit Tests Passing</text>
+  </g>
+
+  <!-- Card 3 -->
+  <g transform="translate(620, 185)" filter="url(#cardShadow)">
+    <rect width="255" height="375" rx="16" fill="url(#cardGrad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="255" height="6" rx="3" fill="#84cc16"/>
+    <text x="24" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#65a30d">PROJECT 03</text>
+    <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#0f172a">File Organizer</text>
+    <text x="24" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#64748b">Filesystem Automation CLI</text>
+    
+    <!-- Mini Folder Visual -->
+    <rect x="20" y="108" width="215" height="135" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <text x="32" y="132" font-family="'JetBrains Mono', Consolas, monospace" font-size="11" font-weight="700" fill="#475569">&#128193; Target: /Downloads</text>
+    <text x="32" y="154" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#65a30d">&rarr; /Images (png, jpg, webp)</text>
+    <text x="32" y="174" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#0284c7">&rarr; /Documents (pdf, docx)</text>
+    <text x="32" y="194" font-family="'JetBrains Mono', Consolas, monospace" font-size="10" fill="#8b5cf6">&rarr; /Source Code (py, js, rs)</text>
+    <text x="32" y="218" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="700" fill="#15803d">Collision renaming: file_1.ext</text>
+
+    <!-- Bullets -->
+    <text x="24" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; 9 functional categories</text>
+    <text x="24" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Safe dry-run preview mode</text>
+    <text x="24" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Root directory protection</text>
+    
+    <!-- Status -->
+    <rect x="24" y="335" width="207" height="26" rx="6" fill="#f7fee7" stroke="#d9f99d"/>
+    <text x="127" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#4d7c0f">&#10003; 5 Unit Tests Passing</text>
+  </g>
+
+  <!-- Card 4 -->
+  <g transform="translate(895, 185)" filter="url(#cardShadow)">
+    <rect width="255" height="375" rx="16" fill="url(#cardGrad)" stroke="#e2e8f0" stroke-width="1.5"/>
+    <rect width="255" height="6" rx="3" fill="#8b5cf6"/>
+    <text x="24" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="800" fill="#7c3aed">PROJECT 04</text>
+    <text x="24" y="68" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" font-weight="700" fill="#0f172a">Rule-Based FAQ Bot</text>
+    <text x="24" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#64748b">Conversational Assistant</text>
+    
+    <!-- Mini Chat Visual -->
+    <rect x="20" y="108" width="215" height="135" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+    <rect x="30" y="122" width="145" height="24" rx="12" fill="#059669"/>
+    <text x="40" y="138" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="600" fill="#ffffff">When does internship start?</text>
+    <rect x="45" y="156" width="175" height="36" rx="10" fill="#e2e8f0"/>
+    <text x="55" y="172" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#0f172a">Batch 2026 starts Nov 1st</text>
+    <text x="55" y="185" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" fill="#0f172a">with orientation week.</text>
+    <text x="32" y="222" font-family="'JetBrains Mono', Consolas, monospace" font-size="9" fill="#7c3aed">&bull; Grounded Datheon JSON FAQ</text>
+
+    <!-- Bullets -->
+    <text x="24" y="270" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Regex intent prioritization</text>
+    <text x="24" y="292" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Strict token normalization</text>
+    <text x="24" y="314" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#334155">&bull; Graceful offline fallback</text>
+    
+    <!-- Status -->
+    <rect x="24" y="335" width="207" height="26" rx="6" fill="#f5f3ff" stroke="#ddd6fe"/>
+    <text x="127" y="352" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="700" fill="#6d28d9">&#10003; 6 Unit Tests Passing</text>
+  </g>
+
+  <!-- Footer Banner Bar -->
+  <g transform="translate(60, 585)">
+    <rect width="1090" height="55" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="30" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#0f172a">
+      Developer: Rajeshwari (rajeshwari229080)
+    </text>
+    <text x="350" y="33" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="500" fill="#475569">
+      &bull; Python 3.10+ Standard Library &bull; 0 External Dependencies
+    </text>
+    <rect x="880" y="12" width="180" height="31" rx="6" fill="#059669"/>
+    <text x="970" y="32" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#ffffff">
+      LIVE ON GITHUB PAGES &rarr;
+    </text>
+  </g>
+</svg>
